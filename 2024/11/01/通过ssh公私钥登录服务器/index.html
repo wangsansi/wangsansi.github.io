@@ -15,7 +15,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="http://example.com/_assets/image1.jpg">
 <meta property="article:published_time" content="2024-11-01T04:16:56.000Z">
-<meta property="article:modified_time" content="2024-11-03T03:35:13.171Z">
+<meta property="article:modified_time" content="2024-11-03T03:42:10.609Z">
 <meta property="article:author" content="shisi.me">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/_assets/image1.jpg">
@@ -107,8 +107,9 @@
 <p><strong>注释（可选）：</strong>通常是创建密钥时附加的注释，如电子邮件地址或用户名。注释部分对于 SSH 的功能没有影响，它主要用于标识公钥的所有者，便于管理。</p>
 <h3 id="2-登录要访问的服务器"><a href="#2-登录要访问的服务器" class="headerlink" title="2. 登录要访问的服务器"></a>2. 登录要访问的服务器</h3><p>将生成的公钥，（通常在 ~&#x2F;.ssh文件夹下带pub后缀的文件 如：id_rsa.pub）添加到服务器的 ~&#x2F;.ssh&#x2F;authorized_keys 文件中。</p>
 <p>如果服务器没有.ssh文件夹，则登录服务器后使用以下命令生成：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /root/.ssh       // -p 意思是生成.ssh文件夹的同时如果没有root文件夹，则也同步生成这个中间文件夹，不带-p如果没有/root 就会报错</span><br><span class="line">sudo chmod 700 /root/.ssh  // 700 表示将所有者权限设为rwx(读、写、可执行) 600 是rw-</span><br><span class="line">vim ~/.ssh/authorized_keys // 使用vim打开文件。这个文件通常是存储允许通过 SSH 公钥认证方法登录系统的公钥。</span><br></pre></td></tr></table></figure>
-
+<p><code>sudo mkdir -p /root/.ssh       // -p 意思是生成.ssh文件夹的同时如果没有root文件夹，则也同步生成这个中间文件夹，不带-p如果没有/root 就会报错</code></p>
+<p><code>sudo chmod 700 /root/.ssh  // 700 表示将所有者权限设为rwx(读、写、可执行) 600 是rw-</code></p>
+<p><code>vim ~/.ssh/authorized_keys // 使用vim打开文件。这个文件通常是存储允许通过 SSH 公钥认证方法登录系统的公钥。</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">打开后里面内容长这样</span><br><span class="line"># John&#x27;s public key</span><br><span class="line">ssh-rsa  </span><br><span class="line">AAAAB3NzaC1yc2EAAAADAQABAAABAQC7xyz7a8bW2c9X2J2Y4Fp5eEJxQ2R3PLVNoxz+5Qp9Uj user1@example.com</span><br><span class="line"># Alice&#x27;s public key</span><br><span class="line">ssh-rsa </span><br><span class="line">AAAABvaC1yc2EAAAADAQABH0JQXYZu7Q user2@example.com</span><br></pre></td></tr></table></figure>
 
 <p>如果不是root用户使用ssh登录，可能该用户的目录权限需要改一下，我这里是使用root登录，所以不用改。</p>
@@ -128,7 +129,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/11/01/%E9%80%9A%E8%BF%87ssh%E5%85%AC%E7%A7%81%E9%92%A5%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8/" data-id="cm311kwbh00016jsmfy9o1k79" data-title="通过ssh公私钥登录服务器" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/11/01/%E9%80%9A%E8%BF%87ssh%E5%85%AC%E7%A7%81%E9%92%A5%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8/" data-id="cm311qli6000194smfwfj7z7r" data-title="通过ssh公私钥登录服务器" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
